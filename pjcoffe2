@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PJ COFFEE Co. | Artisanal Coffee & Roastery</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter & Cinzel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              brown: '#3B2314', // Pantone 4625 C
+              beige: '#D7CEBE', // Pantone 7527 C
+              cream: '#F7F4EE',
+              surface: '#FFFFFF',
+              dark: '#211510'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Cinzel', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-cream text-brand-dark flex flex-col min-h-screen">
+
+  <!-- TOP BAR / DUYURU -->
+  <div class="bg-brand-brown text-brand-beige text-xs tracking-widest text-center py-2 uppercase font-medium">
+    Taze Kavrum Özel Kahveler • 500 ₺ Üzeri Ücretsiz Kargo
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-beige/50">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+      
+      <!-- LOGO -->
+      <a href="#" class="flex flex-col items-center">
+        <span class="font-serif font-black text-2xl tracking-widest text-brand-brown">PJ COFFEE</span>
+        <span class="text-[10px] tracking-[0.25em] font-semibold text-brand-brown/80 uppercase">Co.</span>
+      </a>
+
+      <!-- NAV LİNKLERİ -->
+      <nav class="hidden md:flex gap-8 text-sm font-medium tracking-wide uppercase">
+        <a href="#shop" class="hover:text-brand-brown/70 transition">Çekirdek Kahveler</a>
+        <a href="#menu" class="hover:text-brand-brown/70 transition">Kafe Menüsü</a>
+        <a href="#about" class="hover:text-brand-brown/70 transition">Hakkımızda</a>
+        <a href="#branches" class="hover:text-brand-brown/70 transition">Şubelerimiz</a>
+        <a href="#contact" class="hover:text-brand-brown/70 transition">İletişim</a>
+      </nav>
+
+      <!-- SEPET BUTONU -->
+      <div class="flex items-center gap-4">
+        <button onclick="toggleCart()" class="relative bg-brand-brown text-brand-cream px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase flex items-center gap-2 hover:opacity-90 transition">
+          <span>Sepet</span>
+          <span id="cart-badge" class="bg-brand-beige text-brand-brown rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-bold">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO BÖLÜMÜ -->
+  <section class="relative bg-brand-brown text-brand-cream py-28 px-6 text-center">
+    <div class="max-w-3xl mx-auto">
+      <span class="text-brand-beige text-xs font-semibold tracking-[0.3em] uppercase block mb-3">Nitelikli Çekirdek & Artisan Kavrum</span>
+      <h1 class="font-serif text-4xl sm:text-6xl font-bold tracking-wide leading-tight mb-6">
+        PJ COFFEE CO.<br>BİR KAHVEDEN DAHA FAZLASI.
+      </h1>
+      <p class="text-brand-beige/90 text-base sm:text-lg max-w-xl mx-auto mb-8 font-light">
+        Özenle seçilmiş yöresel çekirdekler, profil kavurma teknikleri ve kusursuz fincan standartları.
+      </p>
+      <div class="flex justify-center gap-4">
+        <a href="#shop" class="bg-brand-beige text-brand-brown px-7 py-3 rounded-md text-xs font-bold uppercase tracking-wider hover:bg-white transition">Hemen Sipariş Ver</a>
+        <a href="#menu" class="border border-brand-beige text-brand-beige px-7 py-3 rounded-md text-xs font-bold uppercase tracking-wider hover:bg-brand-beige hover:text-brand-brown transition">Menüyü Gör</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÖNE ÇIKAN KAHVELER -->
+  <section id="shop" class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <h2 class="font-serif text-3xl font-bold text-brand-brown">ÖNE ÇIKAN KAHVELER</h2>
+      <div class="w-12 h-[2px] bg-brand-brown mx-auto mt-2"></div>
+      <p class="text-sm text-brand-dark/70 mt-3">Taze kavrulmuş paket kahvelerimiz</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Ürün 1 -->
+      <div class="bg-white border border-brand-beige/60 rounded-xl p-6 flex flex-col justify-between hover:shadow-lg transition">
+        <div>
+          <div class="bg-brand-cream h-56 rounded-lg flex items-center justify-center border border-brand-beige/40 mb-5 p-3">
+            <svg class="h-full w-auto drop-shadow-md" viewBox="0 0 160 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 40 L130 40 L140 200 L20 200 Z" fill="#3B2314" />
+              <rect x="25" y="28" width="110" height="14" rx="2" fill="#29180D" />
+              <line x1="30" y1="35" x2="130" y2="35" stroke="#523521" stroke-dasharray="2 2" stroke-width="1.5" />
+              <ellipse cx="80" cy="24" rx="6" ry="2" fill="#1F130B" />
+              <rect x="36" y="108" width="88" height="74" rx="3" fill="#D7CEBE" />
+              <text x="80" y="76" font-family="'Cinzel', serif" font-weight="800" font-size="20" fill="#D7CEBE" text-anchor="middle">PJ</text>
+              <text x="80" y="89" font-family="'Cinzel', serif" font-weight="600" font-size="7" letter-spacing="2" fill="#D7CEBE" text-anchor="middle">COFFEE Co.</text>
+              <line x1="44" y1="120" x2="116" y2="120" stroke="#3B2314" stroke-width="0.8" />
+              <text x="80" y="131" font-family="sans-serif" font-weight="700" font-size="7" fill="#3B2314" text-anchor="middle">SPECIAL BLEND</text>
+              <line x1="44" y1="136" x2="116" y2="136" stroke="#3B2314" stroke-width="0.8" />
+              <text x="80" y="148" font-family="sans-serif" font-size="5" fill="#3B2314" text-anchor="middle">WHOLE BEAN • 250G</text>
+              <text x="80" y="158" font-family="sans-serif" font-size="4.5" fill="#6B5344" text-anchor="middle">MEDIUM ROAST</text>
+              <text x="80" y="169" font-family="sans-serif" font-weight="bold" font-size="4.5" fill="#3B2314" text-anchor="middle">100% ARABICA</text>
+            </svg>
+          </div>
+          <span class="text-[11px] font-semibold tracking-wider text-brand-brown/70 uppercase">Blend • Orta Kavrum</span>
+          <h3 class="font-bold text-lg text-brand-dark mt-1">Pj Coffee Special</h3>
+          <p class="text-xs text-brand-dark/60 mt-2">Karamel, bitter çikolata ve fındık notaları. Dengeli ve gövdeli içim.</p>
+        </div>
+        <div class="mt-6 flex justify-between items-center pt-4 border-t border-brand-cream">
+          <span class="font-bold text-lg text-brand-brown">₺380</span>
+          <button onclick="addToCart('Pj Coffee Special', 380)" class="bg-brand-brown text-brand-cream px-4 py-2 rounded-lg text-xs font-semibold hover:opacity-90 transition">Sepete Ekle</button>
+        </div>
+      </div>
+
+      <!-- Ürün 2 -->
+      <div class="bg-white border border-brand-beige/60 rounded-xl p-6 flex flex-col justify-between hover:shadow-lg transition">
+        <div>
+          <div class="bg-brand-cream h-56 rounded-lg flex items-center justify-center border border-brand-beige/40 mb-5 p-3">
+            <svg class="h-full w-auto drop-shadow-md" viewBox="0 0 160 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 40 L130 40 L140 200 L20 200 Z" fill="#3B2314" />
+              <rect x="25" y="28" width="110" height="14" rx="2" fill="#29180D" />
+              <line x1="30" y1="35" x2="130" y2="35" stroke="#523521" stroke-dasharray="2 2" stroke-width="1.5" />
+              <ellipse cx="80" cy="24" rx="6" ry="2" fill="#1F130B" />
+              <rect x="36" y="108" width="88" height="74" rx="3" fill="#D7CEBE" />
+              <text x="80" y="76" font-family="'Cinzel', serif" font-weight="800" font-size="20" fill="#D7CEBE" text-anchor="middle">PJ</text>
+              <text x="80" y="89" font-family="'Cinzel', serif" font-weight="600" font-size="7" letter-spacing="2" fill="#D7CEBE" text-anchor="middle">COFFEE Co.</text>
+              <line x1="44" y1="120" x2="116" y2="120" stroke="#3B2314" stroke-width="0.8" />
+              <text x="80" y="131" font-family="sans-serif" font-weight="700" font-size="7" fill="#3B2314" text-anchor="middle">PJ EDIT</text>
+              <line x1="44" y1="136" x2="116" y2="136" stroke="#3B2314" stroke-width="0.8" />
+              <text x="80" y="148" font-family="sans-serif" font-size="5" fill="#3B2314" text-anchor="middle">SINGLE ORIGIN • 250G</text>
+              <text x="80" y="158" font-family="sans-serif" font-size="4.5" fill="#6B5344" text-anchor="middle">LIGHT-MEDIUM ROAST</text>
+              <text x="80" y="169" font-family="sans-serif" font-weight="bold" font-size="4.5" fill="#3B2314" text-anchor="middle">ETHIOPIA YIRGACHEFFE</text>
+            </svg>
+          </div>
+          <span class="text-[11px] font-semibold tracking-wider text-brand-brown/70 uppercase">Single Origin • Açık-Orta</span>
+          <h3 class="font-bold text-lg text-brand-dark mt-1">Pj Coffee Edit</h3>
+          <p class="text-xs text-brand-dark/60 mt-2">Yasemin çiçeği, bergamot ve narenciye asiditesi. Ferahlatıcı ve aromatik.</p>
+        </div>
+        <div class="mt-6 flex justify-between items-center pt-4 border-t border-brand-cream">
+          <span class="font-bold text-lg text-brand-brown">₺420</span>
+          <button onclick="addToCart('Pj Coffee Edit', 420)" class="bg-brand-brown text-brand-cream px-4 py-2 rounded-lg text-xs font-semibold hover:opacity-90 transition">Sepete Ekle</button>
+        </div>
+      </div>
+
+      <!-- Ürün 3 -->
+      <div class="bg-white border border-brand-beige/60 rounded-xl p-6 flex flex-col justify-between hover:shadow-lg transition">
+        <div>
+          <div class="bg-brand-cream h-56 rounded-lg flex items-center justify-center border border-brand-beige/40 mb-5 p-3">
+            <svg class="h-full w-auto drop-shadow-md" viewBox="0 0 160 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 40 L130 40 L140 200 L20 200 Z" fill="#3B2314" />
+              <rect x="25" y="28" width="110" height="14" rx="2" fill="#29180D" />
+              <line x1="30" y1="35" x2="130" y2="35" stroke="#523521" stroke-dasharray="2 2" stroke-width="1.5" />
+              <ellipse cx="80" cy="24" rx="6" ry="2" fill="#1F130B" />
+              <rect x="36" y="108" width="88" height="74" rx="3" fill="#D7CEBE" />
+              <text x="80" y="76" font-family="'Cinzel', serif" font-weight="800" font-size="20" fill="#D7CEBE" text-anchor="middle">PJ</text>
+              <text x="80" y="89" font-family="'Cinzel', serif" font-weight="600" font-size="7" letter-spacing="2" fill="#D7CEBE" text-anchor="middle">COFFEE Co.</text>
+              <line x1="44" y1="120" x2="116" y2="120" stroke="#3B2314" stroke-width="0.8" />
+              <text x="80" y="131" font-family="sans-serif" font-weight="700" font-size="7" fill="#3B2314" text-anchor="middle">PJ ATLANTIS</text>
+              <line x1="44" y1="136" x2="116" y2="136" stroke="#3B2314" stroke-width="0.8" />
+              <text x="80" y="148" font-family="sans-serif" font-size="5" fill="#3B2314" text-anchor="middle">RESERVE MICROLOT • 250G</text>
+              <text x="80" y="158" font-family="sans-serif" font-size="4.5" fill="#6B5344" text-anchor="middle">MEDIUM ROAST</text>
+              <text x="80" y="169" font-family="sans-serif" font-weight="bold" font-size="4.5" fill="#3B2314" text-anchor="middle">COLOMBIA HUILA</text>
+            </svg>
+          </div>
+          <span class="text-[11px] font-semibold tracking-wider text-brand-brown/70 uppercase">Single Origin • Orta Kavrum</span>
+          <h3 class="font-bold text-lg text-brand-dark mt-1">Pj Coffee Atlantis</h3>
+          <p class="text-xs text-brand-dark/60 mt-2">Kırmızı elma, esmer şeker ve pürüzsüz krema gövdesi.</p>
+        </div>
+        <div class="mt-6 flex justify-between items-center pt-4 border-t border-brand-cream">
+          <span class="font-bold text-lg text-brand-brown">₺599</span>
+          <button onclick="addToCart('Pj Coffee Atlantis', 599)" class="bg-brand-brown text-brand-cream px-4 py-2 rounded-lg text-xs font-semibold hover:opacity-90 transition">Sepete Ekle</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- KAFE & QR MENÜ BÖLÜMÜ -->
+  <section id="menu" class="bg-brand-beige/20 py-20 border-y border-brand-beige/50">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-3xl font-bold text-brand-brown">KAFE MENÜSÜ</h2>
+        <p class="text-xs tracking-widest text-brand-dark/70 uppercase mt-1">Espresso Bar & Specialties</p>
+      </div>
+
+      <div class="bg-white p-8 sm:p-12 rounded-2xl shadow-sm border border-brand-beige/70">
+        
+        <!-- Espresso Grubu -->
+        <div class="mb-10">
+          <h4 class="font-serif text-lg font-bold text-brand-brown border-b border-brand-beige pb-2 mb-6">ESPRESSO BAR</h4>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline">
+              <span class="font-medium text-sm">Espresso (Single / Double)</span>
+              <span class="font-bold text-brand-brown text-sm">₺80 / ₺110</span>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <span class="font-medium text-sm">Americano</span>
+              <span class="font-bold text-brand-brown text-sm">₺120</span>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <span class="font-medium text-sm">Caffe Latte</span>
+              <span class="font-bold text-brand-brown text-sm">₺140</span>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <span class="font-medium text-sm">Flat White</span>
+              <span class="font-bold text-brand-brown text-sm">₺145</span>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <span class="font-medium text-sm">Cortado</span>
+              <span class="font-bold text-brand-brown text-sm">₺130</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demleme Grubu -->
+        <div>
+          <h4 class="font-serif text-lg font-bold text-brand-brown border-b border-brand-beige pb-2 mb-6">MANUEL DEMLEME & SOĞUKLAR</h4>
+          <div class="space-y-4">
+            <div class="flex justify-between items-baseline">
+              <span class="font-medium text-sm">V60 Pour Over</span>
+              <span class="font-bold text-brand-brown text-sm">₺160</span>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <span class="font-medium text-sm">Cold Brew (Single Origin)</span>
+              <span class="font-bold text-brand-brown text-sm">₺155</span>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <span class="font-medium text-sm">Iced Latte</span>
+              <span class="font-bold text-brand-brown text-sm">₺145</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HAKKIMIZDA BÖLÜMÜ -->
+  <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      <!-- Sol Metin Alanı -->
+      <div>
+        <span class="text-brand-brown/70 text-xs font-semibold tracking-[0.25em] uppercase block mb-2">Hikayemiz</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-brown leading-tight mb-6">
+          KAHVENİN EN SAF HALİNE DUYULAN TUTKU.
+        </h2>
+        <div class="w-12 h-[2px] bg-brand-brown mb-6"></div>
+        
+        <p class="text-brand-dark/80 text-sm leading-relaxed mb-4">
+          <strong>PJ COFFEE Co.</strong>, kahveyi yalnızca bir içecek değil; çiftlikten fincana uzanan özenli bir zanaat olarak kabul eden bir tutkuyla doğdu[cite: 6]. Amacımız, nitelikli kahve kültürünü abartıdan uzak, modern ve samimi bir deneyimle buluşturmaktır[cite: 6].
+        </p>
+        <p class="text-brand-dark/80 text-sm leading-relaxed mb-8">
+          Etiyopya'nın yüksek rakımlı vadilerinden Kolombiya'nın mikro lot çiftliklerine kadar dünyanın en seçkin yöresel çekirdeklerini doğrudan temin ediyor; her hasat için özel kavurma profilleri belirleyerek çekirdeğin en zengin aromatik karakterini açığa çıkarıyoruz[cite: 6].
+        </p>
+
+        <!-- 3 İlke Kutusu -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-brand-beige/60">
+          <div>
+            <span class="font-serif font-bold text-brand-brown text-xl block mb-1">01</span>
+            <h4 class="font-bold text-xs uppercase tracking-wider text-brand-brown mb-1">Seçkin Hasat</h4>
+            <p class="text-[11px] text-brand-dark/70">Yalnızca %100 izlenebilir Specialty Coffee çekirdekleri[cite: 6].</p>
+          </div>
+          <div>
+            <span class="font-serif font-bold text-brand-brown text-xl block mb-1">02</span>
+            <h4 class="font-bold text-xs uppercase tracking-wider text-brand-brown mb-1">Artisan Kavrum</h4>
+            <p class="text-[11px] text-brand-dark/70">Haftalık taze, hassas ısı ve zaman profilli kavurma[cite: 6].</p>
+          </div>
+          <div>
+            <span class="font-serif font-bold text-brand-brown text-xl block mb-1">03</span>
+            <h4 class="font-bold text-xs uppercase tracking-wider text-brand-brown mb-1">Kusursuz Fincan</h4>
+            <p class="text-[11px] text-brand-dark/70">Usta baristalar ve bilimsel demleme parametreleri[cite: 6].</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sağ Görsel Kartı & Rozetler -->
+      <div class="bg-brand-brown text-brand-cream rounded-2xl p-10 sm:p-14 relative overflow-hidden shadow-lg flex flex-col justify-between min-h-[420px]">
+        <div class="absolute -right-12 -bottom-12 opacity-10 font-serif font-black text-9xl select-none">
+          PJ
+        </div>
+
+        <div class="relative z-10">
+          <span class="text-brand-beige text-xs font-semibold tracking-[0.25em] uppercase block mb-3">PJ Coffee Standardı</span>
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold tracking-wide leading-snug mb-4">
+            "Her yudumda taze bir hikaye, her fincanda dengeli bir tat."
+          </h3>
+          <p class="text-brand-beige/80 text-xs font-light leading-relaxed max-w-md">
+            Kahve tutkunlarını hem şubelerimizde özenle hazırlanan fincanlarla hem de ev demlemeleri için taze kavrulmuş paketlerimizle karşılıyoruz[cite: 6].
+          </p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 pt-8 border-t border-brand-beige/20 relative z-10 text-center">
+          <div>
+            <span class="font-serif text-3xl font-bold text-brand-beige block">3+</span>
+            <span class="text-[10px] tracking-wider uppercase text-brand-cream/70">Şube</span>
+          </div>
+          <div>
+            <span class="font-serif text-3xl font-bold text-brand-beige block">%100</span>
+            <span class="text-[10px] tracking-wider uppercase text-brand-cream/70">Arabica</span>
+          </div>
+          <div>
+            <span class="font-serif text-3xl font-bold text-brand-beige block">84+</span>
+            <span class="text-[10px] tracking-wider uppercase text-brand-cream/70">SCA Puanı</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ŞUBELERİMİZ BÖLÜMÜ -->
+  <section id="branches" class="py-20 px-6 max-w-6xl mx-auto border-t border-brand-beige/50">
+    <div class="text-center mb-12">
+      <span class="text-brand-brown/70 text-xs font-semibold tracking-[0.25em] uppercase block mb-2">Lokasyonlar</span>
+      <h2 class="font-serif text-3xl font-bold text-brand-brown">ŞUBELERİMİZ</h2>
+      <div class="w-12 h-[2px] bg-brand-brown mx-auto mt-2"></div>
+      <p class="text-sm text-brand-dark/70 mt-3">En yakın PJ COFFEE Co. noktasını bulun, taze kavrum kahve deneyimine katılın[cite: 6].</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Şube 1: Kadıköy / İstanbul -->
+      <div class="bg-white border border-brand-beige/80 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+        <div>
+          <div class="flex items-center justify-between border-b border-brand-cream pb-3 mb-4">
+            <div>
+              <span class="text-[11px] font-bold tracking-widest text-brand-brown/80 uppercase">İstanbul</span>
+              <h3 class="font-serif font-bold text-xl text-brand-brown">Esentepe</h3>
+            </div>
+            <span class="text-xs bg-brand-cream text-brand-brown px-2.5 py-1 rounded-full font-semibold">Esentepe</span>
+          </div>
+
+          <ul class="space-y-3 text-xs text-brand-dark/80 mb-6">
+            <li class="flex items-start gap-2.5">
+              <span class="font-bold text-brand-brown min-w-[50px]">Adres:</span>
+              <span>Yıldız Posta Cd. 46-1 A, Gayrettepe, 34349 Beşiktaş/İstanbul</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="font-bold text-brand-brown min-w-[50px]">Tel:</span>
+              <a href="tel:+902122675363" class="hover:text-brand-brown font-semibold transition">+90 (212) 267 5363</a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="font-bold text-brand-brown min-w-[50px]">Saatler:</span>
+              <span>Her gün 08:00 - 23:00</span>
+            </li>
+          </ul>
+        </div>
+
+        <a 
+          href="https://maps.app.goo.gl/vLG2eHyffsPG19kYA" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full text-center border border-brand-brown text-brand-brown hover:bg-brand-brown hover:text-brand-cream py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition"
+        >
+          Yol Tarifi Al
+        </a>
+      </div>
+
+      <!-- Şube 2: Çankaya / Ankara -->
+      <div class="bg-white border border-brand-beige/80 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+        <div>
+          <div class="flex items-center justify-between border-b border-brand-cream pb-3 mb-4">
+            <div>
+              <span class="text-[11px] font-bold tracking-widest text-brand-brown/80 uppercase">Ankara</span>
+              <h3 class="font-serif font-bold text-xl text-brand-brown">Tunalı Şubesi</h3>
+            </div>
+            <span class="text-xs bg-brand-cream text-brand-brown px-2.5 py-1 rounded-full font-semibold">Çankaya</span>
+          </div>
+
+          <ul class="space-y-3 text-xs text-brand-dark/80 mb-6">
+            <li class="flex items-start gap-2.5">
+              <span class="font-bold text-brand-brown min-w-[50px]">Adres:</span>
+              <span>Tunalı Hilmi Cad. No: 88, Kavaklıdere, Çankaya / Ankara</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="font-bold text-brand-brown min-w-[50px]">Tel:</span>
+              <a href="tel:+903125550102" class="hover:text-brand-brown font-semibold transition">+90 (312) 555 01 02</a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="font-bold text-brand-brown min-w-[50px]">Saatler:</span>
+              <span>Her gün 08:30 - 23:30</span>
+            </li>
+          </ul>
+        </div>
+
+        <a 
+          href="https://maps.google.com/?q=Tunali+Hilmi+Ankara" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full text-center border border-brand-brown text-brand-brown hover:bg-brand-brown hover:text-brand-cream py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition"
+        >
+          Yol Tarifi Al
+        </a>
+      </div>
+
+      <!-- Şube 3: Konak / İzmir -->
+      <div class="bg-white border border-brand-beige/80 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+        <div>
+          <div class="flex items-center justify-between border-b border-brand-cream pb-3 mb-4">
+            <div>
+              <span class="text-[11px] font-bold tracking-widest text-brand-brown/80 uppercase">İzmir</span>
+              <h3 class="font-serif font-bold text-xl text-brand-brown">Alsancak Şubesi</h3>
+            </div>
+            <span class="text-xs bg-brand-cream text-brand-brown px-2.5 py-1 rounded-full font-semibold">Konak</span>
+          </div>
+
+          <ul class="space-y-3 text-xs text-brand-dark/80 mb-6">
+            <li class="flex items-start gap-2.5">
+              <span class="font-bold text-brand-brown min-w-[50px]">Adres:</span>
+              <span>Kültür Mah. 1382. Sok. No: 12, Alsancak, Konak / İzmir</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="font-bold text-brand-brown min-w-[50px]">Tel:</span>
+              <a href="tel:+902325550103" class="hover:text-brand-brown font-semibold transition">+90 (232) 555 01 03</a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <span class="font-bold text-brand-brown min-w-[50px]">Saatler:</span>
+              <span>Her gün 08:00 - 23:00</span>
+            </li>
+          </ul>
+        </div>
+
+        <a 
+          href="https://maps.google.com/?q=Alsancak+Izmir" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full text-center border border-brand-brown text-brand-brown hover:bg-brand-brown hover:text-brand-cream py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition"
+        >
+          Yol Tarifi Al
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- İLETİŞİM BÖLÜMÜ -->
+  <section id="contact" class="py-20 px-6 bg-brand-cream/60 border-t border-brand-beige/50">
+    <div class="max-w-2xl mx-auto">
+      
+      <div class="text-center mb-10">
+        <span class="text-brand-brown/70 text-xs font-semibold tracking-[0.25em] uppercase block mb-2">Bize Ulaşın</span>
+        <h2 class="font-serif text-3xl font-bold text-brand-brown">İLETİŞİM</h2>
+        <div class="w-12 h-[2px] bg-brand-brown mx-auto mt-2"></div>
+        <p class="text-sm text-brand-dark/70 mt-3">Sorularınız, kurumsal iş birlikleri ve önerileriniz için bize mesaj bırakabilirsiniz[cite: 6].</p>
+      </div>
+
+      <div class="bg-white border border-brand-beige/80 rounded-2xl p-8 sm:p-10 shadow-sm">
+        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-6">
+          
+          <div>
+            <label for="fullName" class="block text-xs font-bold uppercase tracking-wider text-brand-brown mb-2">
+              Ad Soyad <span class="text-red-500">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="fullName" 
+              required 
+              placeholder="Örn: Emre Yılmaz"
+              class="w-full px-4 py-3 bg-brand-cream/40 border border-brand-beige rounded-lg text-sm text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-brown/40 focus:border-brand-brown transition"
+            />
+          </div>
+
+          <div>
+            <label for="subject" class="block text-xs font-bold uppercase tracking-wider text-brand-brown mb-2">
+              Konu <span class="text-red-500">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="subject" 
+              required 
+              placeholder="Örn: Toptan Kahve Talebi / Şube İletişimi"
+              class="w-full px-4 py-3 bg-brand-cream/40 border border-brand-beige rounded-lg text-sm text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-brown/40 focus:border-brand-brown transition"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="block text-xs font-bold uppercase tracking-wider text-brand-brown mb-2">
+              Mesaj <span class="text-red-500">*</span>
+            </label>
+            <textarea 
+              id="message" 
+              rows="5" 
+              required 
+              placeholder="Mesajınızı buraya yazabilirsiniz..."
+              class="w-full px-4 py-3 bg-brand-cream/40 border border-brand-beige rounded-lg text-sm text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-brown/40 focus:border-brand-brown transition resize-none"
+            ></textarea>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full bg-brand-brown text-brand-cream py-3.5 px-6 rounded-lg text-xs font-bold uppercase tracking-widest hover:opacity-90 hover:shadow-md transition duration-200"
+          >
+            Mesajı Gönder
+          </button>
+
+          <div id="contact-success" class="hidden p-4 bg-green-50 border border-green-200 text-green-800 text-xs rounded-lg text-center font-medium">
+            Mesajınız başarıyla iletildi. En kısa sürede sizinle iletişime geçeceğiz[cite: 6].
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEPET MODALI -->
+  <div id="cart-drawer" class="fixed inset-y-0 right-0 w-80 bg-white shadow-2xl border-l border-brand-beige transform translate-x-full transition-transform duration-300 z-50 flex flex-col p-6">
+    <div class="flex justify-between items-center border-b pb-4">
+      <h3 class="font-serif font-bold text-lg text-brand-brown">Sipariş Sepeti</h3>
+      <button onclick="toggleCart()" class="text-gray-400 hover:text-black">✕</button>
+    </div>
+    
+    <div id="cart-items" class="flex-1 overflow-y-auto py-4 space-y-3">
+      <p class="text-xs text-gray-400 text-center mt-10">Sepetiniz boş[cite: 6].</p>
+    </div>
+
+    <div class="border-t pt-4">
+      <div class="flex justify-between font-bold text-sm mb-4">
+        <span>Toplam:</span>
+        <span id="cart-total" class="text-brand-brown">₺0</span>
+      </div>
+      <button class="w-full bg-brand-brown text-white py-3 rounded-lg text-xs font-bold uppercase tracking-wider hover:opacity-90">Siparişi Tamamla</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-brown text-brand-beige mt-auto py-10 px-6 border-t border-brand-beige/20">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 text-xs">
+      <div>
+        <p class="font-serif font-bold text-lg text-white">PJ COFFEE Co.</p>
+        <p class="text-brand-beige/70 mt-1">© 2026 PJ COFFEE Co. Tüm hakları saklıdır[cite: 6].</p>
+      </div>
+      
+      <!-- Sosyal Medya & Sayfa Bağlantıları -->
+      <div class="flex flex-wrap items-center justify-center gap-6">
+        
+        <!-- Instagram -->
+        <a 
+          href="https://www.instagram.com/pjcoffeeco/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="flex items-center gap-1.5 hover:text-white transition"
+          title="Instagram"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <span>Instagram</span>
+        </a>
+
+        <!-- Facebook -->
+        <a 
+          href="https://www.facebook.com/pjcoffeeco/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="flex items-center gap-1.5 hover:text-white transition"
+          title="Facebook"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.667 5H18V0h-3.808C10.595 0 9 1.582 9 4.615V8z"/>
+          </svg>
+          <span>Facebook</span>
+        </a>
+
+        <!-- YouTube -->
+        <a 
+          href="https://www.youtube.com/@pjcoffeeco" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="flex items-center gap-1.5 hover:text-white transition"
+          title="YouTube"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          <span>YouTube</span>
+        </a>
+
+        <span class="text-brand-beige/30 hidden sm:inline">|</span>
+
+        <!-- Sayfa İçi Linkler -->
+        <a href="#about" class="hover:text-white transition">Hakkımızda</a>
+        <a href="#branches" class="hover:text-white transition">Şubeler</a>
+        <a href="#" class="hover:text-white transition">Gizlilik Politikası</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    let cart = [];
+
+    function toggleCart() {
+      const drawer = document.getElementById('cart-drawer');
+      drawer.classList.toggle('translate-x-full');
+    }
+
+    function addToCart(title, price) {
+      cart.push({ title, price });
+      updateCartUI();
+      const drawer = document.getElementById('cart-drawer');
+      if (drawer.classList.contains('translate-x-full')) {
+        drawer.classList.remove('translate-x-full');
+      }
+    }
+
+    function updateCartUI() {
+      document.getElementById('cart-badge').innerText = cart.length;
+      const list = document.getElementById('cart-items');
+      
+      if (cart.length === 0) {
+        list.innerHTML = '<p class="text-xs text-gray-400 text-center mt-10">Sepetiniz boş.</p>';
+        document.getElementById('cart-total').innerText = '₺0';
+        return;
+      }
+
+      let total = 0;
+      list.innerHTML = '';
+      cart.forEach((item, index) => {
+        total += item.price;
+        list.innerHTML += `
+          <div class="flex justify-between items-center text-xs bg-brand-cream/50 p-2 rounded">
+            <div>
+              <p class="font-semibold text-brand-dark">${item.title}</p>
+              <p class="text-brand-brown/80 font-bold">₺${item.price}</p>
+            </div>
+            <button onclick="removeItem(${index})" class="text-red-500 hover:text-red-700">Sil</button>
+          </div>
+        `;
+      });
+
+      document.getElementById('cart-total').innerText = `₺${total}`;
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contact-form');
+      const successMsg = document.getElementById('contact-success');
+      
+      successMsg.classList.remove('hidden');
+      form.reset();
+
+      setTimeout(() => {
+        successMsg.classList.add('hidden');
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
